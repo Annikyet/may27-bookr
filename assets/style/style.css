@@ -25,8 +25,8 @@ header {
 .reservation-window {
   background-color: var(--bg-light);
   margin-top: 5vh;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 .tab-bar {
@@ -55,9 +55,9 @@ header {
   color: var(--text-dark);
 }
 
-.tab-left, .tab-right {
+/* .tab-left, .tab-right {
   display: none
-}
+} */
 
 .reservation-legend {
   display: flex;

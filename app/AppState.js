@@ -5,6 +5,8 @@ import { Trip } from "./Models/Trip.js"
 
 
 class AppState extends EventEmitter {  
+  currentTrip = 0
+
   /** @type {import('./Models/Trip').Trip[]} */
   trips = [
     new Trip({

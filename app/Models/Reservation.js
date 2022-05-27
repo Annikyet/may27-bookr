@@ -1,5 +1,8 @@
+import { generateId } from "../Utils/generateId.js"
+
 export class Reservation {
   constructor(reservation) {
+    this.id = generateId()
     this.type = reservation.type
     this.name = reservation.name
     this.confNum = reservation.confNum
