@@ -1,0 +1,55 @@
+/* BASIC STYLES HERE */
+header {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.new-trip {
+  padding-top: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.reservation-window {
+  margin-top: 5vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.tab {
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: darkgray;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+}
+
+.add-trip {
+
+}
+
+.selected-tab {
+  border-bottom: 0px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.tab-left, .tab-right {
+  display: none
+}
+
+.reservation {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  background-color: darkgrey;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+}
