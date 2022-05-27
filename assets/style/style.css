@@ -59,6 +59,18 @@ header {
   display: none
 }
 
+.reservation-legend {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  background-color: var(--bg-primary);
+}
+
 .reservation {
   display: flex;
   justify-content: space-between;

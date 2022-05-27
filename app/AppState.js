@@ -3,18 +3,26 @@ import { isValidProp } from "./Utils/isValidProp.js"
 import { Reservation } from "./Models/Reservation.js"
 import { Trip } from "./Models/Trip.js"
 
-class AppState extends EventEmitter {
-  // /** @type {import('./Models/Value').Value[]} */
-  // values = []
 
-  /** @type {import('./Models/Reservation').Reservation[]} */
-  reservations = [
-    new Reservation()
-  ]
-  
+class AppState extends EventEmitter {  
   /** @type {import('./Models/Trip').Trip[]} */
   trips = [
-    new Trip()
+    new Trip({
+      name: 'byedaho',
+      reservations: [
+        /** @type {import('./Models/Reservation').Reservation[]} */
+        new Reservation({
+          // enumerated value?
+          type: 'flight',
+          name: 'QXE2590',
+          confNum: '0123456789abcdef',
+          address: 'Gowen Field, Boise, ID',
+          // datetime type?
+          datetime: '2022-05-27T1407MST',
+          cost: 33800
+        })
+      ]
+    })
   ]
 }
 
