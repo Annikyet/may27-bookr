@@ -1,4 +1,4 @@
-import { reservationsService } from "../Services/ReservationsService.js";
+import { reservationsService } from "../Services/ReservationsService.js"
 
 
 // Private
@@ -8,6 +8,6 @@ import { reservationsService } from "../Services/ReservationsService.js";
 // Public
 export class ReservationsController {
   constructor() {
-    reservationsService.hello()
+    
   }
 }

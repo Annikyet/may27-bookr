@@ -1,4 +1,4 @@
-import { tripsService } from "../Services/TripsService.js";
+import { tripsService } from "../Services/TripsService.js"
 
 
 // Private
@@ -7,6 +7,6 @@ import { tripsService } from "../Services/TripsService.js";
 // Public
 export class TripsController {
   constructor() {
-    tripsService.hello()
+    
   }
 }
