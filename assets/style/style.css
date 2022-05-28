@@ -9,6 +9,10 @@
   --text-dark: #000000;
 }
 
+body {
+  background-image: url('../img/IMG_2321.jpeg');
+}
+
 header {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -62,25 +66,72 @@ header {
 .reservation-legend {
   display: flex;
   justify-content: space-between;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
   background-color: var(--bg-primary);
 }
 
 .reservation {
   display: flex;
   justify-content: space-between;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
   background-color: var(--bg-primary);
+}
+
+/*  <span class="res-type">${this.TypeIcon}</span>
+    <span class="res-name">${this.name}</span>
+    <span class="res-conf">${this.confNum}</span>
+    <span class="res-addr">${this.address}</span>
+    <span class="res-date">${this.datetime}</span>
+    <span class="res-cost">$${Math.floor(this.cost / 100)}</span>
+    <span class="res-delete"> */
+
+.res-tag {
+  display: flex;
+  /* justify-content: center; */
+}
+
+.res-type {
+  width: 6%;
+}
+.res-name {
+  width: 16%;
+}
+
+.res-conf {
+  width: 22%;
+}
+
+.res-addr {
+  width: 22%;
+}
+
+.res-date {
+  width: 18%;
+}
+
+.res-cost {
+  width: 12%;
+}
+
+.res-delete {
+  width: 4%;
+}
+
+.stacked-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .new-reservation-bar {

@@ -14,7 +14,7 @@ export class Reservation {
   get TypeIcon() {
     switch (this.type) {
       case 'flight':
-        return `<i class="mdi mdi-airplane"></i>`
+        return `<i class="mdi mdi-airplane-takeoff"></i>`
     }
     return ''
   }
@@ -22,13 +22,13 @@ export class Reservation {
   get Template() {
     return `
       <div class="reservation">
-        <span>${this.TypeIcon}</span>
-        <span>${this.name}</span>
-        <span>${this.confNum}</span>
-        <span>${this.address}</span>
-        <span>${this.datetime}</span>
-        <span>$${Math.floor(this.cost / 100)}</span>
-        <span><i class="mdi mdi-delete" onclick="app.reservationsController.remove('${this.id}')"></i></span>
+        <span class="stacked-text res-type">${this.TypeIcon}</span>
+        <span class="stacked-text res-name">${this.name}</span>
+        <span class="stacked-text res-conf">${this.confNum}</span>
+        <span class="stacked-text res-addr">${this.address}</span>
+        <span class="stacked-text res-date">${this.datetime}</span>
+        <span class="stacked-text res-cost">$${Math.floor(this.cost / 100)}</span>
+        <span class="stacked-text res-delete"><i class="mdi mdi-delete" onclick="app.reservationsController.remove('${this.id}')"></i></span>
       </div>`
   }
 }
