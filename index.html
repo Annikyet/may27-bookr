@@ -27,7 +27,7 @@
       </form>
     </section> -->
 
-    <section class="reservation-window">
+    <section class="reservation-window" id="reservation-window">
       <div class="tab-bar">
         <div class="d-flex">
           <!-- <div class="tab tab-left"><</div> -->
@@ -35,13 +35,12 @@
           <div class="tab selected-tab">trip</div>
           <div class="tab">trip</div>
           <div class="tab">trip</div>
-          <div class="tab add-trip">+</div>
+          <div class="tab add-trip" onclick="app.tripsController.create()">+</div>
         </div>
         <!-- <div class="tab tab-right">></div> -->
       </div>
 
       <div class="reservation-legend">
-        <!-- need a better way of aligning, besides d-flex -->
         <span class="res-tag res-type">Type</span>
         <span class="res-tag res-name">Name</span>
         <span class="res-tag res-conf">Confirmation Number</span>
@@ -50,17 +49,7 @@
         <span class="res-tag res-cost">Cost</span>
         <span class="res-tag res-delete"></span>
       </div>
-      <div class="reservations" id="reservations">
-        <!-- <div class="reservation">
-          need a better way of aligning, besides d-flex
-          <span>reservation details</span>
-          <span>reservation details</span>
-          <span>reservation details</span>
-          <span>reservation details</span>
-          <span>reservation details</span>
-          <span>reservation details</span>
-        </div> -->
-      </div>
+      <div class="reservations" id="reservations"></div>
 
       <form id="new-reservation-form" onsubmit="app.reservationsController.add()">
         <div class="new-reservation-bar">
