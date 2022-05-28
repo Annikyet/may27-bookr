@@ -23,4 +23,8 @@ export class ReservationsController {
     }
     reservationsService.add(reservationData)
   }
+
+  remove(id) {
+    reservationsService.remove(id)
+  }
 }

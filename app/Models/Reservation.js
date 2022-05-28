@@ -28,6 +28,7 @@ export class Reservation {
         <span>${this.address}</span>
         <span>${this.datetime}</span>
         <span>$${Math.floor(this.cost / 100)}</span>
+        <span><i class="mdi mdi-delete" onclick="app.reservationsController.remove('${this.id}')"></i></span>
       </div>`
   }
 }
