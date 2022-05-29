@@ -3,35 +3,23 @@ import { tripsService } from "../Services/TripsService.js"
 
 
 // Private
-function _tabTemplate() {
-  html = `
+function _tabTemplate(type = 'trip') {
+  let html = `
     <div class="tab-bar">
       <div class="d-flex">`
   for (let t = 0; t < ProxyState.trips.length; t++) {
-    html += `div class="tab${currentTrip === t ? " selected" : ""}">${ProxyState.trips[t].name}</div>`
+    //refactor this line, it's too long
+    html += `<div class="tab${ProxyState.currentTrip === t && type === 'trip' ? " selected" : ""}" onclick="app.tripsController.view('${ProxyState.trips[t].id}')">${ProxyState.trips[t].name}</div>`
   }
   html += `
-    <div class="tab add-trip" onclick="app.tripsController.create()">+</div>
+    <div class="tab add-trip ${type === 'add' ? ' selected"' : '" onclick="app.tripsController.create()"'}>+</div>
       </div>
     </div>`
   return html
 }
 
-function _draw() {
-
-  let example = `
-    <div class="tab-bar">
-      <div class="d-flex">
-        <!-- <div class="tab tab-left"><</div> -->
-        <div class="tab">trip</div>
-        <div class="tab selected-tab">trip</div>
-        <div class="tab">trip</div>
-        <div class="tab">trip</div>
-        <div class="tab add-trip" onclick="app.tripsController.create()">+</div>
-      </div>
-      <!-- <div class="tab tab-right">></div> -->
-    </div>
-
+function _legendTemplate() {
+  return `
     <div class="reservation-legend">
       <span class="res-tag res-type">Type</span>
       <span class="res-tag res-name">Name</span>
@@ -41,8 +29,12 @@ function _draw() {
       <span class="res-tag res-cost">Cost</span>
       <span class="res-tag res-delete"></span>
     </div>
-    <div class="reservations" id="reservations"></div>
+    <div class="reservations">`
+}
 
+function _newReservationTemplate() {
+  return `
+    </div>
     <form id="new-reservation-form" onsubmit="app.reservationsController.add()">
       <div class="new-reservation-bar">
         <input type="text" class="reservation-input" id="type" name="type" placeholder="Type">
@@ -55,8 +47,19 @@ function _draw() {
       </div>
       <textarea name="" id="" cols="50" rows="4"></textarea>
     </form>`
+}
 
-  document.getElementById('reservations').innerHTML = ProxyState.trips[ProxyState.currentTrip].Template
+function _draw(type = 'trip') {
+  let html = ''
+  html += _tabTemplate(type)
+  if (type === 'trip') {
+    html += _legendTemplate()
+    html += ProxyState.trips[ProxyState.currentTrip]
+    html += _newReservationTemplate()
+  } else if (type === 'add') {
+    html += '*insert add trip form here*'
+  }
+  document.getElementById('reservation-window').innerHTML = html
 }
 
 // Public
@@ -68,7 +71,7 @@ export class TripsController {
   }
 
   create() {
-
+    _draw('add')
   }
   
   remove(id) {
