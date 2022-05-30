@@ -7,9 +7,13 @@ class ReservationsService {
   }
 
   add(data) {
-    ProxyState.trips[ProxyState.currentTrip].reservations.push(new Reservation(data))
+    console.log(`reservationsService.add(${data})`)
+    for (let trip = 0; trip < ProxyState.trips.length; trip++) {
+      if (ProxyState.trips[trip].id === ProxyState.tabs[ProxyState.currentTab].tripId) {
+        ProxyState.trips[trip].reservations.push(new Reservation(data))
+      }
+    }
     ProxyState.trips = ProxyState.trips
-    console.log(ProxyState.trips)
   }
 
   remove(id) {

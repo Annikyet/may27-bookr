@@ -12,6 +12,7 @@ export class ReservationsController {
 
   add() {
     window.event.preventDefault()
+    console.log('reservationsController.add()')
     let form = window.event.target
     let reservationData = {
       type: form.type.value,
