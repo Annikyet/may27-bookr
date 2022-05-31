@@ -52,8 +52,8 @@ export class Trip {
         <input type="text" class="reservation-input" required id="name" name="name" placeholder="Name">
         <input type="text" class="reservation-input" required id="conf-num" name="confNum" placeholder="Confirmation Number">
         <input type="text" class="reservation-input" required id="address" name="address" placeholder="Address">
-        <input type="text" class="reservation-input" required id="datetime" name="datetime" placeholder="Date & Time">
-        <input type="text" class="reservation-input" required id="cost" name="cost" placeholder="Cost">
+        <input type="date" class="reservation-input" required id="datetime" name="datetime" placeholder="Date & Time">
+        <input type="number" class="reservation-input" required id="cost" name="cost" placeholder="Cost">
         <button class="reservation-button">Add</button>
       </div>
       <textarea name="" id="" cols="50" rows="4"></textarea>
