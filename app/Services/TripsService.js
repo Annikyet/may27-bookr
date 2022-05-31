@@ -1,9 +1,18 @@
 import { ProxyState } from "../AppState.js"
 import { Trip } from "../Models/Trip.js"
 import { Tab } from "../Models/Tab.js"
+import { saveState } from "../Utils/LocalStorage.js"
 
+function _saveState() {
+  saveState()
+}
 
 class TripsService {
+  constructor() {
+    ProxyState.on('currentTab', _saveState)
+    ProxyState.on('trips', _saveState)
+    ProxyState.on('tabs', _saveState)
+  }
   add(tripData) {
     let newTrip = new Trip(tripData)
     ProxyState.trips.push(newTrip)
