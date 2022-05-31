@@ -7,6 +7,14 @@ export class Trip {
     this.reservations = trip.reservations
   }
 
+  get TotalCost() {
+    let total = 0
+    for (let r = 0; r < this.reservations.length; r++) {
+      total += this.reservations[r].cost
+    }
+    return total
+  }
+
   get Template() {
     let html = `
     <div class="reservation-legend">
@@ -23,7 +31,17 @@ export class Trip {
       html += this.reservations[i].Template
     }
     html += `
-    </div>
+      </div>
+      <div class="reservation-legend"s>
+        <span class="res-type"></span>
+        <span class="res-name"</span>
+        <span class="res-conf"></span>
+        <span class="res-addr"></span>
+        <span class="res-date"></span>
+        <span class="res-cost">Total: $${Math.floor(this.TotalCost / 100)}</span>
+        <span class="res-delete"></span>
+      </div>`
+    html += `
     <form id="new-reservation-form" onsubmit="app.reservationsController.add()">
       <div class="new-reservation-bar">
         <input type="text" class="reservation-input" id="type" name="type" placeholder="Type">
