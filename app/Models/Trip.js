@@ -36,8 +36,12 @@ export class Trip {
       <span class="res-tag res-delete"></span>
     </div>
     <div class="reservations">`
-    for (let i = 0; i < this.reservations.length; i++) {
-      html += this.reservations[i].Template
+
+    // let parties = ProxyState.parties.sort((a,b)=> a.date - b.date)
+    let reservations = this.reservations.sort((a, b) => a.datetime - b.datetime)
+
+    for (let i = 0; i < reservations.length; i++) {
+      html += reservations[i].Template
     }
     html += `
       </div>
