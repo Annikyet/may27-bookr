@@ -5,15 +5,19 @@ import { tabsService } from "../Services/TabsService.js"
 
 // Private
 function _tabBarTemplate() {
-  let html = `<div class="tab-bar"><div class="d-flex">`
+  let html = `<div class="tab-bar"><div class="d-flex justify-content-between"><div class="d-flex">`
   for (let t = 1; t < ProxyState.tabs.length; t++) {
     //refactor this line, it's too long
     html += `<div class="tab${ProxyState.currentTab === t ? " selected" : ""}" `
     html += `onclick="app.tabsController.view(${t})">${ProxyState.tabs[t].name}</div>`
   }
   html += `<div class="tab${ProxyState.currentTab === 0 ? " selected" : ""}" `
-  html += `onclick="app.tabsController.view(0)">${ProxyState.tabs[0].name}</div>`
-  html += `</div></div>`
+  html += `onclick="app.tabsController.view(0)">${ProxyState.tabs[0].name}</div></div></div>`
+  if (ProxyState.currentTab > 0) {
+    let currentTripId = ProxyState.tabs[ProxyState.currentTab].tripId
+    html += `<i class="mdi mdi-close" onclick="app.tripsController.remove('${currentTripId}')"></i>`
+  }
+  html += `</div>`
   return html
 }
 
@@ -21,6 +25,7 @@ function _draw() {
   console.log(`tabsController._draw()`)
   let html = _tabBarTemplate()
   html += ProxyState.tabs[ProxyState.currentTab].Template
+  // console.log(html)
   document.getElementById('reservation-window').innerHTML = html
 }
 

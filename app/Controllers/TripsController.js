@@ -13,14 +13,20 @@ export class TripsController {
     
   }
 
-  create() {
-    ProxyState.trips.push(new Trip({name: 'meow', reservations: []}))
-    ProxyState.tabs.push(new Tab('meow', ProxyState.trips[ProxyState.trips.length - 1].id))
-    ProxyState.trips = ProxyState.trips
-    ProxyState.currentTab = ProxyState.tabs.length - 1
+  add() {
+    window.event.preventDefault()
+    console.log('tripsController.add()')
+    let form = window.event.target
+    let tripData = {
+      name: form.tripname.value,
+      reservations: []
+    }
+    tripsService.add(tripData)
   }
   
   remove(id) {
-    
+    // add are you sure dialog
+    console.log(`tripsController.remove(${id})`)
+    tripsService.remove(id)
   }
 }

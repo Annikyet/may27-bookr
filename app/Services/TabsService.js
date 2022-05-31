@@ -7,7 +7,9 @@ function _update() {
   for (let trip = 0; trip < ProxyState.trips.length; trip++) {
     // ProxyState.tabs.find(tab => tab.tripId === ProxyState.trips[trip].id).Template = ProxyState.trips[trip].Template
     for (let tab = 0; tab < ProxyState.tabs.length; tab++) {
-      if (ProxyState.tabs[tab].tripId = ProxyState.trips[trip].id) {
+      if (ProxyState.tabs[tab].tripId === ProxyState.trips[trip].id) {
+        console.log('tab: ' + tab)
+        console.log(ProxyState.trips[trip].Template)
         ProxyState.tabs[tab].Template = ProxyState.trips[trip].Template
       }
     }
