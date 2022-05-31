@@ -9,6 +9,11 @@ export class Trip {
     }
     this.name = trip.name
     this.reservations = trip.reservations
+    if (trip.notes) {
+      this.notes = trip.notes
+    } else {
+      this.notes = ''
+    }
   }
 
   get TotalCost() {
@@ -56,7 +61,7 @@ export class Trip {
         <input type="number" class="reservation-input" required id="cost" name="cost" placeholder="Cost">
         <button class="reservation-button">Add</button>
       </div>
-      <textarea name="" id="" cols="50" rows="4"></textarea>
+      <textarea name="notes" id="notes" cols="50" rows="4" value="${this.notes}"></textarea>
     </form>`
     html += `
       <div class="modal fade" id="deleteTripModal" tabindex="-1" aria-labelledby="deleteTripModalLabel" aria-hidden="true">
