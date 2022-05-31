@@ -2,7 +2,11 @@ import { generateId } from "../Utils/generateId.js"
 
 export class Trip {
   constructor(trip) {
-    this.id = generateId()
+    if (trip.id) {
+      this.id = trip.id
+    } else {
+      this.id = generateId()
+    }
     this.name = trip.name
     this.reservations = trip.reservations
   }

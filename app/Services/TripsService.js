@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js"
 import { Trip } from "../Models/Trip.js"
 import { Tab } from "../Models/Tab.js"
-import { saveState } from "../Utils/LocalStorage.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 function _saveState() {
   saveState()
@@ -9,6 +9,7 @@ function _saveState() {
 
 class TripsService {
   constructor() {
+    loadState()
     ProxyState.on('currentTab', _saveState)
     ProxyState.on('trips', _saveState)
     ProxyState.on('tabs', _saveState)
