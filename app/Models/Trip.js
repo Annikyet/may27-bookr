@@ -53,7 +53,14 @@ export class Trip {
     html += `
     <form id="new-reservation-form" onsubmit="app.reservationsController.add()">
       <div class="new-reservation-bar">
-        <input type="text" class="reservation-input" required id="type" name="type" placeholder="Type">
+      
+        <select class="reservation-input" required id="type" name="type">
+          <option value="flight">🛩</option>
+          <option value="rental">🚗</option>
+          <option value="accomodation">🛏</option>
+          <option value="attraction">🎟</option>
+          <option value="other">🌊</option>
+        </select>
         <input type="text" class="reservation-input" required id="name" name="name" placeholder="Name">
         <input type="text" class="reservation-input" required id="conf-num" name="confNum" placeholder="Confirmation Number">
         <input type="text" class="reservation-input" required id="address" name="address" placeholder="Address">
@@ -61,8 +68,11 @@ export class Trip {
         <input type="number" class="reservation-input" required id="cost" name="cost" placeholder="Cost">
         <button class="reservation-button">Add</button>
       </div>
-      <textarea name="notes" id="notes" cols="50" rows="4" value="${this.notes}"></textarea>
-    </form>`
+      </form>
+      <form onblur="blablabla()">
+        <textarea name="notes" id="notes" cols="50" rows="4">${this.notes}</textarea>
+      </form>`
+        // TODO change type input field to type option and use emjois for text-holder
     html += `
       <div class="modal fade" id="deleteTripModal" tabindex="-1" aria-labelledby="deleteTripModalLabel" aria-hidden="true">
         <div class="modal-dialog">

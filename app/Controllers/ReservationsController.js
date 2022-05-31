@@ -26,6 +26,8 @@ export class ReservationsController {
   }
 
   remove(id) {
-    reservationsService.remove(id)
+    if (window.confirm("Do you want to remove this reservation?")){
+      reservationsService.remove(id)
+    }
   }
 }

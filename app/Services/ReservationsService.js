@@ -16,9 +16,12 @@ class ReservationsService {
     ProxyState.trips = ProxyState.trips
   }
 
+  // let parties = ProxyState.parties.sort((a,b)=> a.date - b.date)
+
   remove(id) {
-    let newReservations = ProxyState.trips[ProxyState.currentTrip].reservations.filter(r => r.id !== id)
-     ProxyState.trips[ProxyState.currentTrip].reservations = newReservations
+    // debugger
+    let newReservations = ProxyState.trips[ProxyState.currentTab - 1].reservations.filter(r => r.id !== id)
+     ProxyState.trips[ProxyState.currentTab - 1].reservations = newReservations
      ProxyState.trips = ProxyState.trips
   }
 }
